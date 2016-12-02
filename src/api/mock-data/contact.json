@@ -1,0 +1,26 @@
+{
+  "contact": {
+    "computername": null,
+    "fileHash": "071cad0f236db45018eafc8d0beba4b9fa79676d",
+    "id": 1,
+    "ip": null,
+    "officeversion": null,
+    "path": "C%3A%5CUsers%Bla%5CDocuments%Bla%sdasd-sd%5Chasasdmasadscro-unsignasdaed1%20-%20kopie.docm",
+    "readonly": false,
+    "status": "opened",
+    "timeUser": null,
+    "user": "Lorem",
+    "vbasigned": false
+  },
+  "macro": {
+    "analistScore": null,
+    "analyseScore": null,
+    "firstUpload": "Sat, 05 Nov 2016 23:07:17 GMT",
+    "id": 1,
+    "macroBinB64": "",
+    "macroCodeB64": "",
+    "macroHash": "65e0847ece9b7d02eef164e60bc4dc42bb9d4866",
+    "responseStatus": null,
+    "responseStatusExpiry": null
+  }
+}
