@@ -1,16 +1,7 @@
 <template>
-    <main>
-        <section class="centered">
-            <slot></slot>
-        </section>
-    </main>
+    <section class="container container--padded">
+        <transition name="fade" mode="in-out">
+            <router-view />
+        </transition>
+    </section>
 </template>
-
-<script>
-
-</script>
-
-<style lang="stylus">
-    main
-        padding: 20px
-</style>

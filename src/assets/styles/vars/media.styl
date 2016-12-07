@@ -1,0 +1,35 @@
+$breakpoints = {
+    's': 480px,
+    'm': 768px,
+    'l': 1024px,
+    'xl': 1280px,
+    'xxl': 1440px
+}
+
+small-max()
+    @media screen and (max-width: $breakpoints['s'] - 1)
+        {block}
+
+small()
+    @media screen and (min-width: $breakpoints['s'])
+        {block}
+
+medium-max()
+    @media screen and (max-width: $breakpoints['m'] - 1)
+        {block}
+
+medium()
+    @media screen and (min-width: $breakpoints['m'])
+        {block}
+
+large-max()
+    @media screen and (max-width: $breakpoints['l'] - 1)
+        {block}
+
+large()
+    @media screen and (min-width: $breakpoints['l'])
+        {block}
+
+xlarge()
+    @media screen and (min-width: $breakpoints['xl'])
+        {block}

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span v-if="loading">Loading..</span>
+        <loader />
         <transition name="fade" mode="out-in">
             <router-view class="view"></router-view>
         </transition>
@@ -8,8 +8,13 @@
 </template>
 
 <script>
+import loader from './loader.vue'
+
 export default {
     name: 'root',
+    components: {
+        loader
+    },
     computed: {
         loading () {
             return this.$store.state.app.loading
@@ -17,6 +22,8 @@ export default {
     }
 }
 </script>
+
+<style lang="stylus" src="../assets/styles/index.styl">
 
 <style lang="stylus">
 .fade-enter-active, .fade-leave-active

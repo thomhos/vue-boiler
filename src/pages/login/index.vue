@@ -1,19 +1,12 @@
 <template>
-    <v-layout>
-        <div>
-            <label>Authenticated state: {{ auth }}</label>
-            <button @click="login">Login!</button>
-        </div>
-    </v-layout>
+    <div>
+        <label>Authenticated state: {{ auth }}</label>
+        <button class="button" @click="login">Login!</button>
+    </div>
 </template>
 
 <script>
-import layout from '../../layouts/login.vue'
-
 export default {
-    components: {
-        VLayout: layout
-    },
     computed: {
         auth () {
             return this.$store.state.authentication.authenticated
@@ -25,21 +18,14 @@ export default {
                 this.$router.push('/')
             })
         }
-    },
-    // beforeMount () {
-    //     console.log('checking store data ', this.$store.state.authentication.authenticated)
-    //     console.log('setting store from localstorage')
-    //     this.$store.dispatch('updateAuth')
-    //
-    //     console.log('checking store again', this.$store.state.authentication.authenticated)
-    //     if(this.$store.state.authentication.authenticated) {
-    //         this.$router.push('/')
-    //     }
-    // }
+    }
 }
 </script>
 
 <style lang="stylus">
-label
-    font-size: 20px
+.button
+    padding: 5px 10px
+    border: 1px solid blue
+    background-color: lightblue
+
 </style>

@@ -1,9 +1,5 @@
-import timeline from './timeline'
-import contact from './contact'
-import macro from './macro'
+import example from './example'
 
 export {
-    timeline,
-    contact,
-    macro
+    example,
 }

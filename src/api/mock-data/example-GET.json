@@ -1,0 +1,18 @@
+{
+    "name": "example value",
+    "amount": 3,
+    "examples": [
+        {
+            "example": "bla"
+        },
+        {
+            "example": "bla"
+        },
+        {
+            "example": "bla"
+        },
+        {
+            "example": "bla"
+        }
+    ]
+}

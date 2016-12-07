@@ -13,13 +13,13 @@ Vue.use(Router)
  *  Get the initial state before we hook up the routes
  *  Necessary to get the auth state in the store
  */
-store.dispatch('updateAuth')
+store.dispatch('checkAuth')
 
 /*
  *  Create the router instance
  */
 const router = new Router({
-    mode: 'history',
+    mode: 'hash',
     scrollBehavior: () => ({ y: 0 }),
     routes
 })

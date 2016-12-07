@@ -4,6 +4,7 @@ import modules  from './modules'
 
 /*
  *  Tell vue it should use Vuex as store.
+ *  https://vuex.vuejs.org/en/
  */
 Vue.use(Vuex)
 

@@ -1,30 +1,20 @@
-import Vue from 'vue';
 import {
   SET_AUTHENTICATION,
-  REMOVE_AUTHENTICATION,
-  UPDATE_AUTHENTICATION
-} from '../../types';
+  REMOVE_AUTHENTICATION
+} from '../../types'
 
+/*
+ *  All actions related to the authentication state module
+ */
 export default {
-    [SET_AUTHENTICATION](state, token) {
+
+    // Update the authentication state
+    [SET_AUTHENTICATION](state) {
         state.authenticated = true
-        localStorage.setItem('user_token', token)
-        console.log('setting auth status in mutation')
-        Vue.http.headers.common.Authorization = `Bearer ${token}`;
     },
 
+    // Update the authentication state
     [REMOVE_AUTHENTICATION](state) {
         state.authenticated = false
-        localStorage.removeItem('user_token')
-        console.log('removing auth status in mutation')
-        Vue.http.headers.common.Authorization = ''
-    },
-
-    [UPDATE_AUTHENTICATION](state) {
-        state.authenticated = !!localStorage.getItem('user_token')
-
-        if (state.authenticated) {
-            Vue.http.headers.common.Authorization = `Bearer ${localStorage.getItem('user_token')}`
-        }
     }
 }

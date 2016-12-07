@@ -1,33 +1,21 @@
 <template>
     <div>
-        <header>
-            <nav>
-                <router-link to="/">Timeline</router-link>
-                <router-link to="/detail">Detail</router-link>
-                <button @click="logout">Logout</button>
-            </nav>
-        </header>
-        <main>
-            <section class="centered">
-                <slot></slot>
-            </section>
-        </main>
+        <navigation />
+        <section class="container container--padded">
+            <transition name="fade" mode="out-in">
+                <router-view />
+            </transition>
+        </section>
     </div>
 </template>
 
 <script>
+import navigation from '../components/navigation.vue'
+
 export default {
-    methods: {
-        logout() {
-            this.$store.dispatch('removeAuth').then((res) => {
-                this.$router.push('/login')
-            })
-        }
+    name: 'loggedin-layout',
+    components: {
+        navigation
     }
 }
 </script>
-
-<style lang="stylus">
-    main
-        padding: 20px
-</style>

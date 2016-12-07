@@ -21,12 +21,6 @@ module.exports = {
         filename: '[name].[chunkhash].js'
     },
 
-    resolve: {
-        alias: {
-            'public': path.resolve(__dirname, '../public')
-        }
-    },
-
     module: {
         // noParse: /es6-promise\.js$/, // avoid webpack shimming process
         rules: [
@@ -38,10 +32,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
             },
             {
                 test: /\.json$/,
@@ -49,11 +40,11 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
                 loader: 'url-loader',
                 options: {
                 limit: 10000,
-                    name: '[name].[ext]?[hash]'
+                    name: 'assets/[name].[ext]?[hash]'
                 }
             }
         ]

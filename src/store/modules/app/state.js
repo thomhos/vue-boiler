@@ -1,4 +1,7 @@
+/*
+ *  Initial app state
+ */
 export default {
     loading: false,
-    errors: null
+    errors: []
 }
