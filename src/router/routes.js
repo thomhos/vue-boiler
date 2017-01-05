@@ -12,7 +12,7 @@ export default [
         children: [
             {
                 path: '',
-                component: pages.loginIndex
+                component: pages.login.index
             }
         ]
     },
@@ -23,11 +23,11 @@ export default [
         children: [
             {
                 path: '',
-                component: pages.dashboardIndex
+                component: pages.dashboard.index
             },
             {
                 path: 'detail',
-                component: pages.dashboardDetail
+                component: pages.dashboard.detail
             }
         ]
     }

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import navigation from '../components/navigation.vue'
+import navigation from '../components/lib/navigation.vue'
 
 export default {
     name: 'loggedin-layout',

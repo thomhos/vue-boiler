@@ -1,32 +1,23 @@
-import Vue from 'vue';
-import {
-  SET_LOADING,
-  SET_ERROR,
-  REMOVE_ERROR,
-  CLEAR_ERRORS
-} from '../../types';
+import Vue          from 'vue'
+import * as types   from '../../types'
 
 /*
  *  Mutations that directly affect the app state.
  */
 export default {
     // Set the app to loading
-    [SET_LOADING](state, loading) {
+    [types.SET_LOADING](state, loading) {
         state.loading = loading
     },
 
-    // Add an error
-    [SET_ERROR](state, error) {
-        state.errors.push(error)
+
+    [types.SET_AUTHENTICATION](state, token) {
+        state.token         = token
+        state.authenticated = true
     },
 
-    // Remove an error
-    [REMOVE_ERROR](state, index) {
-        state.errors.splice(index, 1)
-    },
-
-    // Remove all errors
-    [CLEAR_ERRORS](state) {
-        state.errors = []
+    [types.REMOVE_AUTHENTICATION](state) {
+        state.token         = null
+        state.authenticated = false
     }
 }

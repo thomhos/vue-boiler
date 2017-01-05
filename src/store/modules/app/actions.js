@@ -8,25 +8,60 @@ export const setLoading = ({ commit }, loading) => {
 }
 
 /*
- *  Action to log an error in the application.
- *  Here you could also connect some external error logger.
+ *  Check if a user token exists in local storage
  */
-export const setError = ({ commit }, error) => {
-    commit(mutations.SET_ERROR, error)
+export const checkAuth = ({ commit }) => {
+    const token = localStorage.getItem('user_token')
+
+    if (!!token) {
+        //Vue.http.headers.common.Authorization = `Bearer ${token}`
+        commit(mutations.SET_AUTHENTICATION, token)
+    }
 }
 
 /*
- *  Action to remove an individual error,
- *  Imagine you show all errors in an overview somewhere,
- *  The user could remove individual errors
+ *  Set the user authentication and token
  */
-export const removeError = ({ commit }, index) => {
-    commit(mutations.REMOVE_ERROR, index)
+export const setAuth = ({ commit }, token) => {
+    commit(mutations.SET_AUTHENTICATION, token)
+
+    localStorage.setItem('user_token', token)
+
+    //Vue.http.headers.common.Authorization = `Bearer ${token}`
 }
 
 /*
- *  Action to clear all errors in the app.
+ *  Remove all traces of the user
  */
-export const clearErrors = ({ commit }) => {
-    commit(mutations.CLEAR_ERRORS)
+export const removeAuth = ({ commit }) => {
+    commit(mutations.REMOVE_AUTHENTICATION)
+
+    localStorage.removeItem('user_token')
+
+    //Vue.http.headers.common.Authorization = ''
+}
+
+/*
+ *  Log the user in
+ */
+export const login = ({ dispatch }, credentials) => {
+    return new Promise((resolve, reject) => {
+        dispatch('setLoading', true)
+
+        authentication.save(credentials).then(({ body: token }) => {
+            dispatch('setAuth', token)
+            dispatch('setLoading', false)
+            resolve()
+        }).catch((err) => {
+            dispatch('setLoading', false)
+            reject()
+        })
+    })
+}
+
+/*
+ *  Logout
+ */
+export const logout = ({ dispatch }) => {
+    dispatch('removeAuth')
 }

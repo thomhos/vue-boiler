@@ -5,7 +5,7 @@ import store from '../../store'
  *  Redirect to login if doesn't exist.
  */
 export default (to, from, next) => {
-    if(!store.state.authentication.authenticated) {
+    if(!store.state.app.authenticated) {
         next('/login')
     } else {
         next()

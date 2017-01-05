@@ -3,5 +3,6 @@
  */
 export default {
     loading: false,
-    errors: []
+    authenticated: false,
+    token: null
 }

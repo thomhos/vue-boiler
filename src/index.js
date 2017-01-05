@@ -3,14 +3,14 @@ import api          from './api'
 import store        from './store'
 import router       from './router'
 
-import Root         from './components/root.vue'
+import Root         from './components/lib/root.vue'
 
 /*
  *  create the app instance.
  *  here we inject the router and store to all child components,
  *  making them available everywhere as `this.$router` and `this.$store`.
  */
-const app = new Vue(Vue.util.extend({ router, store }, Root))
+const app = new Vue({ router, store, ...Root })
 
 /*
  *  Mount the app in the dom.

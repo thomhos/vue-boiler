@@ -5,7 +5,7 @@ const HTMLPlugin    = require('html-webpack-plugin')
 
 module.exports = {
     entry: {
-        app: './src/app.js',
+        app: './src/index.js',
         vendor: [
             'es6-promise',
             'vue',

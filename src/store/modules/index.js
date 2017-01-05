@@ -1,5 +1,4 @@
 import app              from './app'
-import authentication   from './authentication'
 import example          from './example'
 
 /*
@@ -7,6 +6,5 @@ import example          from './example'
  */
 export default {
     app,
-    authentication,
     example
 }

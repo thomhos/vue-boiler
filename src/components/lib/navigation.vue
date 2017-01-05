@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'navigation',
     methods: {
@@ -17,11 +18,14 @@ export default {
         }
     }
 }
+
 </script>
 
 <style lang="stylus">
+
 .button
     padding: 5px 10px
     border: 1px solid blue
     background-color: lightblue
+
 </style>

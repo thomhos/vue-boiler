@@ -4,7 +4,7 @@
         <span>{{ apiData.name }}</span>
 
         <h2>Amount</h2>
-        <span>{{ apiData.amount }}</span>
+        <span>{{ amount }}</span>
 
         <h2>Examples</h2>
         <span v-for="example in apiData.examples">{{ example }}</span>
@@ -17,6 +17,9 @@ export default {
     computed: {
         apiData () {
             return this.$store.state.example.exampleData || {}
+        },
+        amount () {
+            return this.apiData.examples.length || 0
         }
     },
     created () {

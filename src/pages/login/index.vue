@@ -9,7 +9,7 @@
 export default {
     computed: {
         auth () {
-            return this.$store.state.authentication.authenticated
+            return this.$store.state.app.authenticated
         }
     },
     methods: {
@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="stylus">
+
 .button
     padding: 5px 10px
     border: 1px solid blue

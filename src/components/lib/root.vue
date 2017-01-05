@@ -1,9 +1,9 @@
 <template>
     <div>
-        <loader />
         <transition name="fade" mode="out-in">
             <router-view class="view"></router-view>
         </transition>
+        <loader />
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" src="../assets/styles/index.styl">
+<style lang="stylus" src="../../assets/styles/index.styl">
 
 <style lang="stylus">
 .fade-enter-active, .fade-leave-active
